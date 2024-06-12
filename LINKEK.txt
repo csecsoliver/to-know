@@ -1,2 +1,5 @@
-https://subnettingpractice.com/vlsm.html - VLSM CALCULATOR  
-https://github.com/nits68/Python         - PYTHON FELADATOK (EGY RÉSZE)
+https://subnettingpractice.com/vlsm.html 		- VLSM CALCULATOR  
+https://github.com/nits68/Python         		- PYTHON FELADATOK (EGY RÉSZE)
+https://vlsmcalc.vercel.app/             		- SUBMASK CALCULATOR:
+https://www.calculator.net/ip-subnet-calculator.html	- MÁSIK CALCULATOR
+https://halozatconfig.sytes.net/			- NETACAD SEGÉDLET	
