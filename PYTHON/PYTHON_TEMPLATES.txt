@@ -1,7 +1,7 @@
 # Python anyagok
 #00 - Extensions
 #01 - Prímek
-#02 - Bonyolult osztály
+#02 - Versenykiszámítás
 #03 - Statisztika
 #04 - Legjobb függvény
 #05 - Legnagyobb közös osztó (kivonásos)
@@ -13,7 +13,9 @@
 #11 - Dátumok közötti eltelt napok + abs függvény
 #12 - Pénzváltó + round, match - case
 #13 - Eltelt idő két osztály elem között (SMS)
-#14 - két soros csv kezelése (SMS)
+#14 - Asztalterítő
+#15 - Bonyolult osztály
+#16 - két soros csv kezelése (SMS)
 
 
 ### - 00
@@ -47,7 +49,7 @@ def ez_prim(szam:int) -> bool:
         return True
 
 main()
-### - 02
+### - 15
 class Tanulo:
     def __init__(self, row: str) -> None:
         adatok = row.strip().split('\t')
@@ -101,6 +103,9 @@ def kerekites(atlag:float) -> int:
     elif atlag <= 1.99:
         return 1
 
+
+main()
+
 ### - 03
 def statisztika() -> dict:
     stat= {}
@@ -111,6 +116,34 @@ def statisztika() -> dict:
             else:
                 stat[t.osztaly] += 1
     return stat
+
+###2
+import datetime
+
+def most_ido()-> list[int, int]:
+    minute = datetime.datetime.now().minute
+    hour = datetime.datetime.now().hour
+    return [minute, hour]
+
+def bekeres(uzenet, min, max):
+    valasz = int(input(f'{uzenet}: '))
+    while valasz<min or valasz>max:
+        print(f'{min} és {max} közötti értéket adjon meg.')
+    return valasz
+
+jelenlegi = most_ido()
+ora = bekeres("Kérem adja meg az órát: ", 0,23)
+perc = bekeres("Kérem adja meg a percet: ", 0,59)
+ido = ora * 60 + perc
+aktualis_ido = jelenlegi[0] * 60 + jelenlegi[1]
+
+
+if aktualis_ido << ido:
+    print('A versenynek már vége lett')
+else:
+    print(f'A verseny hátralévő ideje: {ido - aktualis_ido} perc')
+
+
 ### - 04
 def legjobb_atlag() -> Tanulo:
     legjobb = tanulok_listaja[0]
@@ -284,7 +317,31 @@ def longest_time_between_message_of_girlfriend():
                 if gap > max_gap:
                     max_gap = gap
     return max_gap
-### - 14
+
+import math
+import random
+
+###14
+import random
+import math
+
+def felszin(merete):
+    felszine = (merete / 2) * (merete / 2) * math.pi
+    return felszine
+
+radius = int(input('Kérem az az asztalnak az átmérőjét (m): '))
+colors = ['barna', 'fekete', 'bordo', 'feher']
+print(f'Az asztal terítője: {felszin(radius)}')
+print(f'Az terítő színe {random.choice(colors)}')
+
+if radius >> 50:
+    print('Ilyen asztalra nem gyártanak terítőt')
+
+if random.choice(colors) not in colors:
+    print('Ilyen színben nem létezik asztal')
+
+
+### - 16
 def load_from_file(filename: str) -> None:
     file = open(filename, 'r', encoding = 'utf-8')
     # sor = file.readline()
