@@ -4,3 +4,4 @@ https://vlsmcalc.vercel.app/             		- SUBMASK CALCULATOR:
 https://www.calculator.net/ip-subnet-calculator.html	- MÁSIK CALCULATOR
 https://halozatconfig.sytes.net/			- NETACAD SEGÉDLET	
 https://www.solarwinds.com/free-tools/advanced-subnet-calculator - ADVANCED CALCULATOR
+https://www.vidra-gabor.hu/python-feladatgyujtemeny.php - PYTHON FELADATGY.
