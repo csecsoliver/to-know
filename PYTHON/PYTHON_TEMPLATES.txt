@@ -16,6 +16,7 @@
 #14 - Asztalterítő
 #15 - Bonyolult osztály
 #16 - két soros csv kezelése (SMS)
+#18 - Szülinap számláló
 
 
 ### - 00
@@ -105,6 +106,38 @@ def kerekites(atlag:float) -> int:
 
 
 main()
+
+###18
+import datetime
+
+print('Hány napja születtél')
+
+def szam_bevitel(text, max):
+    szam = 0
+    while szam <=0 or szam > max:
+        try: 
+            szam = int(input(text))
+        except:
+            print("Nem megfelelő szám")
+    return szam
+
+def eltelt_napok (ev1, ho1, nap1, ev2, ho2, nap2):
+    datum1 = datetime.date(ev1, ho1, nap1)
+    datum2= datetime.date (ev2, ho2, nap2)
+    return (datum2-datum1).days
+
+ev1 = szam_bevitel("Kérem az első dátum évét:" , 2024)
+ho1 = szam_bevitel("Kérem az első datum hónapját: ", 12) 
+nap1 = szam_bevitel("Kérem az első dátum napját:", 31)
+
+ev2 = szam_bevitel("Kérem az második dátum évét:",2024) 
+ho2= szam_bevitel("Kérem az második dátum hónapját:", 12) 
+nap2 =  szam_bevitel("Kérem az második dátum napját: ", 31)
+
+
+print(f"{ev1}.{ho1}. {nap1} és {ev2}. {ho2}. {nap2} között {eltelt_napok (ev1, ho1, nap1, ev2, ho2, nap2)} nap volt")
+ev = int(eltelt_napok/365)
+print(f'Ez {ev} évnek felel meg')
 
 ### - 03
 def statisztika() -> dict:
